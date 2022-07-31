@@ -1,0 +1,24 @@
+:root{
+  --colorPrimary:#27AE60;
+  --colorPrimary50:#93D7AF;
+  --colorSecondary:#EB5757;
+
+  --gray100:#333333;
+  --gray50:#828282;
+  --gray20:#E0E0E0;
+  --gray0:#F5F5F5;
+
+  --negative:#E60000;
+  --warning:#FFCD07;
+  --sucess:#168821;
+  --information:#155BCB;
+
+  --heading1:bold 26px 'Inter',sans-serif;
+  --heading1:bold 22px 'Inter',sans-serif;
+  --heading1:bold 18px 'Inter',sans-serif;
+  --heading1:bold 14px 'Inter',sans-serif;
+  --headline:regular 16px 'Inter',sans-serif;
+  --body:regular 14px 'Inter',sans-serif;
+  --body600:semiBold 14px 'Inter',sans-serif;
+  --caption:regular 12px 'Inter',sans-serif;
+}
