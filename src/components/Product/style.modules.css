@@ -1,0 +1,56 @@
+.liProductsList{
+  width: 300px;
+  height: 346px;
+  border: 2px solid var(--gray20);
+  border-radius: 8px;
+  margin-right: 20px;
+}
+
+.productImg{
+  width: 296px;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color:var(--gray0);
+  border-radius: 8px 8px 0px 0px;
+}
+
+.productImg img{
+  width: 177px;
+  height: 177px;
+}
+
+.divProductInfo{
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  gap:14px;
+  padding:0 21px;
+  padding-top: 23px;
+}
+
+.divProductInfo h3{
+  font: var(--heading3);
+  color: var(--gray100);
+}
+
+.divProductInfo .category{
+  font: var(--caption);
+  color: var(--gray50);
+}
+
+.divProductInfo .price{
+  font: var(--body);
+  color: var(--colorPrimary);
+}
+
+.divProductInfo button{
+  width: 106px;
+  height: 40px;
+  border: none;
+  border-radius: 8px;
+  background: var(--colorPrimary);
+  color: var(--gray0);
+  font: var(--body600);
+}
