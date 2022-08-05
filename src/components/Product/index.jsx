@@ -11,7 +11,7 @@ const Product = ({id,name,category,price,img, handleClick})=>{
       <div className='divProductInfo'>
         <h3>{name}</h3>
         <span className='category'>{category}</span>
-        <span className='price'>{`R$ ${price},00`}</span>
+        <span className='price'>{`R$ ${price.toFixed(2)}`}</span>
         <button onClick={()=>handleClick(id)}>Adicionar</button>
       </div>
     </li>

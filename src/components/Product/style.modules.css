@@ -6,6 +6,11 @@
   margin-right: 20px;
 }
 
+.liProductsList:hover{
+  outline: 3px solid var(--gray100);
+  outline-offset: -3px;
+}
+
 .productImg{
   width: 296px;
   height: 150px;
@@ -53,4 +58,14 @@
   background: var(--colorPrimary);
   color: var(--gray0);
   font: var(--body600);
+}
+
+.divProductInfo button:hover{
+  background-color: var(--colorPrimary50);
+}
+
+@media screen and (min-width:768px){
+  .liProductsList{
+    margin-bottom: 15px;
+  }
 }

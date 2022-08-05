@@ -2,18 +2,21 @@ import styles from './style.modules.css';
 import CartProduct from '../CartProduct';
 import CartTotal from '../CartTotal';
 
-const Cart = ({currentSale,totalPrice,removeItem,removeAllItens})=>{
+const Cart = ({currentSale,totalPrice,removeItem,removeAllItens,cartIsEmpty})=>{
 
-  // const totalPrice = currentSaleTotal.reduce((previous,current)=>{
-  //   return previous.price + current.price
-  // },0)
-  
   return(
     <div className='cart'>
       <div className="cartTitle">
         <h3>Carrinho de Compras</h3>
       </div>
       <div className='divCartProduct'>
+      {
+        cartIsEmpty ?
+        <div className="cartEmpty">
+          <h3>O carrinho está vazio</h3>
+          <span>Adicione itens</span>
+        </div>
+        :
         <ul>
           {
             currentSale.map((elem)=>{
@@ -21,6 +24,7 @@ const Cart = ({currentSale,totalPrice,removeItem,removeAllItens})=>{
             })
           }
         </ul>
+      }
       </div>
       <div className='divCartTotal'>
         <hr />
