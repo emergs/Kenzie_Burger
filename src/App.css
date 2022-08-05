@@ -29,3 +29,28 @@
   box-sizing: border-box;
   list-style: none;
 }
+
+button{
+  cursor: pointer;
+}
+
+.contentMain{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@media(min-width:1024px) {
+  .contentMain{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 0 115px;
+  }
+
+  .contentMain div{
+    max-width: 363px;
+  }
+}

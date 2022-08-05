@@ -1,6 +1,18 @@
 .ulProduct{
+  width: 100%;
   display: flex;
   height: 346px;
   overflow:scroll;
   margin-left: 16px;
+}
+
+@media screen and (min-width:768px){
+  .ulProduct{
+    margin-top: 26px;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    height: auto;
+    overflow: hidden;
+  }
 }

@@ -7,6 +7,7 @@
   flex-direction: column;
   align-items : center;
   background-color: var(--gray0);
+  margin-bottom:15px ;
 }
 
 .header img{
@@ -17,6 +18,7 @@
 
 .header input{
   width: 100%;
+  max-width: 768px;
   height: 60px;
   border-radius: 8px;
   border: 2px solid var(--gray20);
@@ -31,11 +33,49 @@
 .header button{
   position: absolute;
   right:26px;
-  top:75px;
+  top:72px;
   width: 107px;
   height: 40px;
   border-radius: 8px;
   border: 2px solid var(--colorPrimary);
   background-color: var(--colorPrimary);
   color:var(--gray0);
+}
+
+@media screen and (min-width:769px){
+  .header{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+  }
+
+  .header input{
+    max-width: 500px;
+  }
+
+  .header button{
+    position: absolute;
+    top: 58px;
+    right: 25px;
+  }
+
+  .header button:hover{
+    background-color: var(--colorPrimary50);
+    border: none;
+  }
+  
+}
+
+@media(min-width:1024px){
+  .header{
+    position: relative;
+    padding: 0 115px;
+  }
+
+  .header button{
+    position: absolute;
+    top: 50px;
+    right: 125px;
+  }
 }
