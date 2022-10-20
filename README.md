@@ -1,4 +1,13 @@
-Acesse : https://react-entrega-s1-hamburgueria-da-kenzie-emergs.vercel.app/
+O objetivo do projeto foi desenvolver um e-commerce de lanches onde o cliente tem acesso a uma variedade de itens e caso deseje pode realizar seu pedido.
+
+- Dentre as principais funcionalidades do projeto pode-se listar:
+- Adicionar itens ao carrinho
+- Buscar um item específico
+- Remover um determinado item do carrinho.
+- Remover todos os itens do carrinho simultaneamente.
+
+Principais tecnologias usadas para esse projeto: ReactJS, React Hooks (useState, useEffect), CSS Modules e consumo de API Rest.
+
 
 1 - Nesta aplicação você pode selecionar produtos filtrar e adicionar ou remover do carrinho de compras
 
@@ -10,3 +19,4 @@ Acesse : https://react-entrega-s1-hamburgueria-da-kenzie-emergs.vercel.app/
 
 5 - Para remover todos os produtos do carrinho de uma só vez, clique no botão remover todos
 
+Deploy do projeto: https://react-entrega-s1-hamburgueria-da-kenzie-emergs.vercel.app/
