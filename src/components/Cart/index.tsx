@@ -2,7 +2,7 @@ import styles from './style.modules.css';
 import CartProduct from '../CartProduct';
 import CartTotal from '../CartTotal';
 
-const Cart = ({currentSale,totalPrice,removeItem,removeAllItens,cartIsEmpty})=>{
+const Cart = ()=>{
 
   return(
     <div className='cart'>

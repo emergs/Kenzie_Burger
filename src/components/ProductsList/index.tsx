@@ -1,7 +1,7 @@
 import Product from '../Product';
 import styles from './style.modules.css';
 
-const ProductsList = ({products,filteredProducts, handleClick})=>{
+const ProductsList = ()=>{
   
   const productsList = filteredProducts.length < 1 ? products : filteredProducts;
 
