@@ -1,17 +1,15 @@
-import styles from './style.modules.css';
+import React from 'react';
 
-const CartTotal = ({total, removeAllItens})=>{
+export const CartTotal = ()=>{
   return(
     <>
       <div className="priceTotal">
         <span className="name">Total</span>
-        <span className="price">R${total.toFixed(2)}</span>
+        {/* <span className="price">R${total.toFixed(2)}</span> */}
       </div>
       <div className='btnRemoveAll'>
-        <button onClick={()=>{removeAllItens()}}>Remover todos</button>
+        {/* <button onClick={()=>{removeAllItens()}}>Remover todos</button> */}
       </div>
     </>
   )
 }
-
-export default CartTotal;

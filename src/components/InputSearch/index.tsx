@@ -1,19 +1,20 @@
 import { useState } from 'react';
-import styles from './style.modules.css';
+import React from 'react';
 
-const InputSearch = ({showProducts})=>{
-  const [wordSearch,setWordSearch] = useState('');
-
-  const filterSearch =(word)=>{
-    setWordSearch(word)
-  }
+export const InputSearch = ()=>{
 
   return(
     <>
-      <input type='text' value={wordSearch} placeholder='Digite sua pesquisa' onChange={(event)=>{filterSearch(event.target.value)}}/>
-      <button onClick={()=>showProducts(wordSearch)}>Pesquisar</button>
+      <input type='text' 
+      /*value={"wordSearch"}*/ 
+      placeholder='Digite sua pesquisa' 
+      /*onChange={(event)=>{filterSearch(event.target.value)}}*/
+      />
+
+      <button 
+        // onClick={()=>showProducts(wordSearch)}
+        >Pesquisar
+      </button>
     </>
   )
 }
-
-export default InputSearch;

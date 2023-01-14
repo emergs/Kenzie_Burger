@@ -1,10 +1,9 @@
-import imgLogo from '../../assets/logo-burger-kenzie.svg';
-import styles from './style.modules.css';
+import React from 'react';
+import imgLogo from "../../assets/logo-burger-kenzie.svg";
 
-const Logo = ()=>{
+
+export const Logo = ()=>{
   return(
     <img src={imgLogo} alt="logo" />
   )
 }
-
-export default Logo;

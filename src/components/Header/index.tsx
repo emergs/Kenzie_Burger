@@ -1,15 +1,12 @@
-import InputSearch from '../InputSearch';
-import Logo from '../Logo';
-import styles from './style.modules.css';
+import {InputSearch} from '../InputSearch';
+import {Logo} from '../Logo';
+import React from 'react';
 
-
-const Header = ()=>{
+export const Header = ()=>{
   return(
     <div className='header'>
       <Logo/>
-      <InputSearch showProducts={showProducts}/>
+      <InputSearch/>
     </div>
   )
 }
-
-export default Header;
