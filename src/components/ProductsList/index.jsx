@@ -1,15 +1,15 @@
 import Product from '../Product';
-import styles from './style.modules.css';
+import './style.modules.css';
 
-const ProductsList = ({products,filteredProducts, handleClick})=>{
-  
+const ProductsList = ({ products, filteredProducts, handleClick }) => {
+
   const productsList = filteredProducts.length < 1 ? products : filteredProducts;
 
-  return(
+  return (
     <ul className='ulProduct'>
       {
-        productsList?.map((elem)=>{
-          return <Product key={elem.id} id={elem.id} name={elem.name} category={elem.category} price={elem.price} img={elem.img} handleClick={handleClick}/>
+        productsList?.map((elem) => {
+          return <Product key={elem.id} id={elem.id} name={elem.name} category={elem.category} price={elem.price} img={elem.img} handleClick={handleClick} />
         })
       }
     </ul>

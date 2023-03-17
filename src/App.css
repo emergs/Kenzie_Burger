@@ -47,7 +47,9 @@ button{
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
-    margin: 0 115px;
+    margin: 0 auto;
+    min-width: 1024px;
+    max-width: 1350px;
   }
 
   .contentMain div{
