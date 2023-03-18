@@ -1,4 +1,4 @@
-.liProductsList{
+.liProductsList {
   width: 300px;
   height: 346px;
   border: 2px solid var(--gray20);
@@ -6,51 +6,52 @@
   margin-right: 20px;
 }
 
-.liProductsList:hover{
-  outline: 3px solid var(--gray100);
+.liProductsList:hover {
+  outline: 3px solid var(--gray50);
   outline-offset: -3px;
+  cursor: pointer;
 }
 
-.productImg{
+.productImg {
   width: 296px;
   height: 150px;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color:var(--gray0);
+  background-color: var(--gray0);
   border-radius: 8px 8px 0px 0px;
 }
 
-.productImg img{
+.productImg img {
   width: 177px;
   height: 177px;
 }
 
-.divProductInfo{
+.divProductInfo {
   display: flex;
   flex-direction: column;
   align-items: baseline;
-  gap:14px;
-  padding:0 21px;
+  gap: 14px;
+  padding: 0 21px;
   padding-top: 23px;
 }
 
-.divProductInfo h3{
+.divProductInfo h3 {
   font: var(--heading3);
   color: var(--gray100);
 }
 
-.divProductInfo .category{
+.divProductInfo .category {
   font: var(--caption);
   color: var(--gray50);
 }
 
-.divProductInfo .price{
+.divProductInfo .price {
   font: var(--body);
   color: var(--colorPrimary);
 }
 
-.divProductInfo button{
+.divProductInfo button {
   width: 106px;
   height: 40px;
   border: none;
@@ -60,12 +61,12 @@
   font: var(--body600);
 }
 
-.divProductInfo button:hover{
+.divProductInfo button:hover {
   background-color: var(--colorPrimary50);
 }
 
-@media screen and (min-width:768px){
-  .liProductsList{
+@media screen and (min-width:768px) {
+  .liProductsList {
     margin-bottom: 15px;
   }
 }

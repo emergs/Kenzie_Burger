@@ -17,10 +17,11 @@
   }
 }
 
-@media screen and (min-width:1024px){
-  .ulProduct{
+@media screen and (min-width:1024px) {
+  .ulProduct {
     display: flex;
     justify-content: flex-start;
     flex-wrap: wrap;
+    margin-left: 0px;
   }
 }

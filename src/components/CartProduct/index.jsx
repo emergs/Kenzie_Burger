@@ -1,4 +1,4 @@
-import styles from './style.modules.css';
+import './style.modules.css';
 import { AiOutlineClose} from 'react-icons/ai';
 
 const CartProduct = ({id,name,category,price,img,removeItem})=>{

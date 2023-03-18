@@ -1,13 +1,15 @@
 import InputSearch from '../InputSearch';
 import Logo from '../Logo';
-import styles from './style.modules.css';
+import './style.modules.css';
 
 
-const Header = ({showProducts})=>{
-  return(
+const Header = ({ showProducts }) => {
+  return (
     <div className='header'>
-      <Logo/>
-      <InputSearch showProducts={showProducts}/>
+      <main>
+        <Logo />
+        <InputSearch showProducts={showProducts} />
+      </main>
     </div>
   )
 }

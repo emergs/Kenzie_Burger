@@ -1,4 +1,4 @@
-import styles from './style.modules.css';
+import './style.modules.css';
 
 const CartTotal = ({total, removeAllItens})=>{
   return(

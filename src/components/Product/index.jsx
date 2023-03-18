@@ -1,9 +1,8 @@
-import { useState } from 'react';
-import styles from './style.modules.css';
+import './style.modules.css';
 
-const Product = ({id,name,category,price,img, handleClick})=>{
+const Product = ({ id, name, category, price, img, handleClick }) => {
 
-  return(
+  return (
     <li key={id} id={id} className='liProductsList'>
       <div className='productImg'>
         <img src={img} alt={name} />
@@ -12,7 +11,7 @@ const Product = ({id,name,category,price,img, handleClick})=>{
         <h3>{name}</h3>
         <span className='category'>{category}</span>
         <span className='price'>{`R$ ${price.toFixed(2)}`}</span>
-        <button onClick={()=>handleClick(id)}>Adicionar</button>
+        <button onClick={() => handleClick(id)}>Adicionar</button>
       </div>
     </li>
   )
