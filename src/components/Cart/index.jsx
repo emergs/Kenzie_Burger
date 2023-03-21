@@ -2,7 +2,7 @@ import './style.modules.css';
 import CartProduct from '../CartProduct';
 import CartTotal from '../CartTotal';
 
-const Cart = ({ currentSale, totalPrice, removeItem, removeAllItens, cartIsEmpty }) => {
+const Cart = ({ currentSale, currentSaleTotal, removeItem, removeAllItens, cartIsEmpty, addPrice, subtractPrice, getQtdProducts }) => {
 
   return (
     <div className='cart'>
@@ -20,7 +20,7 @@ const Cart = ({ currentSale, totalPrice, removeItem, removeAllItens, cartIsEmpty
             <ul>
               {
                 currentSale.map((elem) => {
-                  return <CartProduct key={elem.id} id={elem.id} name={elem.name} category={elem.category} price={elem.price} img={elem.img} removeItem={removeItem} />
+                  return <CartProduct key={elem.id} id={elem.id} name={elem.name} category={elem.category} price={elem.price} img={elem.img} removeItem={removeItem} addPrice={addPrice} subtractPrice={subtractPrice} getQtdProducts={getQtdProducts} />
                 })
               }
             </ul>
@@ -28,7 +28,8 @@ const Cart = ({ currentSale, totalPrice, removeItem, removeAllItens, cartIsEmpty
       </div>
       <div className='divCartTotal'>
         <hr />
-        <CartTotal total={totalPrice} removeAllItens={removeAllItens} />
+        {console.log(currentSaleTotal)}
+        <CartTotal currentSaleTotal={currentSaleTotal} removeAllItens={removeAllItens} />
       </div>
     </div>
   )

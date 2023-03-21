@@ -8,75 +8,92 @@ function App() {
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [currentSale, setCurrentSale] = useState([]);
-  const [currentSaleTotal, setCurrentSaleTotal] = useState([]);
+  const [currentSaleTotal, setCurrentSaleTotal] = useState(0);
   const [cartIsEmpty, setCartIsEmpety] = useState(true);
+  const [productsTest, setProductsTest] = useState([]);
 
-  useEffect(()=>{
+  useEffect(() => {
     fetch('https://hamburgueria-kenzie-json-serve.herokuapp.com/products')
-    .then(response=> response.json())
-    .then(response=>setProducts(response))
-    .catch(err=>console.log(err));
-  },[])
+      .then(response => response.json())
+      .then(response => setProducts(response))
+      .catch(err => console.log(err));
+  }, [])
 
-  const showProducts =(word)=>{
-      const filter = products?.filter((elem)=>{
-        //console.log(elem.name.toLowerCase())
-        return elem.name.toLowerCase().includes(word.toLowerCase())
-      }) 
-
-      setFilteredProducts(filter)
-    //console.log(word.toLowerCase())
-    //console.log(filter)
+  const getQtdProducts = (product) => {
+    setProductsTest([...productsTest, product])
   }
 
-  const handleClick = ((productId)=>{
-    //console.log(productId)
-    const item = products.find((elem)=>{
-      return elem.id === productId; 
+  const showProducts = (word) => {
+    const filter = products?.filter((elem) => {
+      return elem.name.toLowerCase().includes(word.toLowerCase())
     })
 
-    const itensCart = currentSale.some((elem)=>{
+    setFilteredProducts(filter)
+  }
+
+  const handleClick = ((productId) => {
+    const item = products.find((elem) => {
+      return elem.id === productId;
+    })
+
+    const itensCart = currentSale.some((elem) => {
       return elem.id === productId
     })
 
-    itensCart === false ?
-    setCurrentSaleTotal([...currentSaleTotal,item],setCurrentSale([...currentSale,item]))
-    :
-    setCurrentSaleTotal([...currentSaleTotal,item]);
-
+    if (!itensCart) {
+      setCurrentSale([...currentSale, item])
+    }
+    setCurrentSaleTotal(currentSaleTotal + parseInt(item.price))
     setCartIsEmpety(false);
   });
-  
-  const removeItem = ((productId)=>{
-    const inCart = currentSale.filter((elem)=>{
+
+  const removeItem = ((productId) => {
+    const inCart = currentSale.filter((elem) => {
       return elem.id !== productId
     })
-    
-    inCart.length > 0 ? 
-    setCurrentSale(inCart, setCurrentSaleTotal(inCart))
-    : 
-    setCartIsEmpety(true, setCurrentSaleTotal(inCart));
+
+    const itemDeleted = currentSale.filter((elem) => {
+      return elem.id === productId
+    })
+
+    console.log(itemDeleted[0].price)
+    console.log(productsTest[0]?.qtd)
+
+    inCart.length > 0 ?
+      setCurrentSale(inCart, setCurrentSaleTotal(currentSaleTotal - itemDeleted[0].price))
+      :
+      setCartIsEmpety(true, setCurrentSaleTotal(currentSaleTotal - itemDeleted[0].price));
   })
 
-  const removeAllItens = (()=>{
+  const removeAllItens = (() => {
     setCurrentSale([]);
     setCurrentSaleTotal([]);
     setCartIsEmpety(true);
   })
 
-  const totalPrice = currentSaleTotal.reduce((previous,current)=>{
-    return previous + current.price
-  },0)
-  console.log(currentSale)
-  console.log(currentSaleTotal)
+  // const totalPrice = currentSaleTotal.reduce((previous, current) => {
+  //   return previous + current.price
+  // }, 0)
+  // const totalPrice = currentSaleTotal
+
+  const addPrice = (value) => {
+    setCurrentSaleTotal(currentSaleTotal + parseInt(value))
+  }
+
+  const subtractPrice = (value) => {
+    setCurrentSaleTotal(currentSaleTotal - parseInt(value))
+  }
+
+  console.log(productsTest);
+
 
   return (
     <div className="App">
       <Header showProducts={showProducts}
       />
       <div className='contentMain'>
-        <ProductsList products={products} filteredProducts={filteredProducts} handleClick={handleClick}/>
-        <Cart currentSale={currentSale} totalPrice={totalPrice} removeItem={removeItem} removeAllItens={removeAllItens} cartIsEmpty={cartIsEmpty}/>
+        <ProductsList products={products} filteredProducts={filteredProducts} handleClick={handleClick} />
+        <Cart currentSale={currentSale} currentSaleTotal={currentSaleTotal} removeItem={removeItem} removeAllItens={removeAllItens} cartIsEmpty={cartIsEmpty} addPrice={addPrice} subtractPrice={subtractPrice} getQtdProducts={getQtdProducts} />
       </div>
     </div>
   );
