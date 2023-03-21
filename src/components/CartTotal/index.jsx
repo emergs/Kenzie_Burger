@@ -1,7 +1,6 @@
 import './style.modules.css';
 
 const CartTotal = ({ currentSaleTotal, removeAllItens }) => {
-  console.log(currentSaleTotal);
   return (
     <>
       <div className="priceTotal">

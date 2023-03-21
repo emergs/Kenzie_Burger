@@ -10,7 +10,7 @@ function App() {
   const [currentSale, setCurrentSale] = useState([]);
   const [currentSaleTotal, setCurrentSaleTotal] = useState(0);
   const [cartIsEmpty, setCartIsEmpety] = useState(true);
-  const [productsTest, setProductsTest] = useState([]);
+  const [productsQtd, setProductsQtd] = useState([]);
 
   useEffect(() => {
     fetch('https://hamburgueria-kenzie-json-serve.herokuapp.com/products')
@@ -20,7 +20,9 @@ function App() {
   }, [])
 
   const getQtdProducts = (product) => {
-    setProductsTest([...productsTest, product])
+    console.log(product);
+    setProductsQtd([...productsQtd, product])
+    console.log(productsQtd);
   }
 
   const showProducts = (word) => {
@@ -56,9 +58,6 @@ function App() {
       return elem.id === productId
     })
 
-    console.log(itemDeleted[0].price)
-    console.log(productsTest[0]?.qtd)
-
     inCart.length > 0 ?
       setCurrentSale(inCart, setCurrentSaleTotal(currentSaleTotal - itemDeleted[0].price))
       :
@@ -83,9 +82,6 @@ function App() {
   const subtractPrice = (value) => {
     setCurrentSaleTotal(currentSaleTotal - parseInt(value))
   }
-
-  console.log(productsTest);
-
 
   return (
     <div className="App">

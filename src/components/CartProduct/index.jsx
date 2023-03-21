@@ -10,14 +10,14 @@ const CartProduct = ({ id, name, category, price, img, removeItem, addPrice, sub
   const priceUp = () => {
     setQtd(qtd + 1)
     addPrice(price)
-    getQtdProducts([{ id: id, price: price, qtd: qtd }])
+    getQtdProducts({ id: id, price: price, qtd: qtd })
   }
 
   const priceDown = () => {
     if (qtd > 1) {
       setQtd(qtd - 1)
       subtractPrice(price)
-      getQtdProducts([{ id: id, price: price, qtd: qtd }])
+      getQtdProducts({ id: id, price: price, qtd: qtd })
     }
   }
 

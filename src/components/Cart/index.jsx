@@ -28,7 +28,6 @@ const Cart = ({ currentSale, currentSaleTotal, removeItem, removeAllItens, cartI
       </div>
       <div className='divCartTotal'>
         <hr />
-        {console.log(currentSaleTotal)}
         <CartTotal currentSaleTotal={currentSaleTotal} removeAllItens={removeAllItens} />
       </div>
     </div>
